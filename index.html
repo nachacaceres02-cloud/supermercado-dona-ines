@@ -36,14 +36,21 @@
   <div class="container">
     <section class="section" id="categorias">
       <h2>Categorías</h2>
+      <input type="text" id="busqueda" placeholder="Buscar productos..." onkeyup="filtrar()" style="width:100%;padding:12px;border:1px solid #ccc;border-radius:10px;margin-bottom:16px;">
       <div class="grid">
-        <div class="card"><a href="verduras.html">🥦 Verduras</a></div>
-        <div class="card"><a href="abarrotes.html">🛒 Abarrotes</a></div>
-        <div class="card"><a href="alcohol.html">🍺 Alcohol</a></div>
-        <div class="card"><a href="dulces.html">🍬 Dulces</a></div>
-        <div class="card"><a href="limpieza.html">🧻 Limpieza</a></div>
+        <div class="card"><a href="#verduras">🥦 Verduras</a></div>
+        <div class="card"><a href="#abarrotes">🛒 Abarrotes</a></div>
+        <div class="card"><a href="#alcohol">🍺 Alcohol</a></div>
+        <div class="card"><a href="#dulces">🍬 Dulces</a></div>
+        <div class="card"><a href="#limpieza">🧻 Limpieza</a></div>
       </div>
     </section>
+
+    <section class="section" id="verduras"><h2>🥦 Verduras</h2><div class="grid productos"><div class="card producto-item">Tomate - $1.000</div><div class="card producto-item">Lechuga - $800</div></div></section>
+    <section class="section" id="abarrotes"><h2>🛒 Abarrotes</h2><div class="grid productos"><div class="card producto-item">Azúcar Iansa - $1290</div><div class="card producto-item">Jurel Único - $1890</div></div></section>
+    <section class="section" id="alcohol"><h2>🍺 Alcohol</h2><div class="grid productos"><div class="card producto-item">Cerveza - $1.000</div></div></section>
+    <section class="section" id="dulces"><h2>🍬 Dulces</h2><div class="grid productos"><div class="card producto-item">Próximamente</div></div></section>
+    <section class="section" id="limpieza"><h2>🧻 Limpieza</h2><div class="grid productos"><div class="card producto-item">Papel Higiénico Confort - $1000</div></div></section>
 
     <section class="section" id="ubicacion">
       <h2>Ubicación</h2>
@@ -55,5 +62,13 @@
       <a class="btn" href="https://wa.me/56983845708">WhatsApp</a>
     </section>
   </div>
+<script>
+function filtrar(){
+let q=document.getElementById('busqueda').value.toLowerCase();
+document.querySelectorAll('.producto-item').forEach(el=>{
+ el.style.display=el.innerText.toLowerCase().includes(q)?'block':'none';
+});
+}
+</script>
 </body>
 </html>
